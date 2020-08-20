@@ -1,7 +1,6 @@
 # Configure builds for our target, the micro:bit's architecture
 [target.thumbv6m-none-eabi]
-# Execute binary using gdb when calling cargo run
-runner = "arm-none-eabi-gdb"
+runner = "probe-run --chip nRF51822_xxAA"
 # Tweak to the linking process required by the cortex-m-rt crate
 rustflags = [
     "-C", "link-arg=-Tlink.x",
